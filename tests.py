@@ -24,6 +24,12 @@ class TestBooksCollector:
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
 
+    # проверка добавления книги которой еще нет в словаре, позитивный сценарий
+    def test_add_new_book_add_book_not_in_list_positive_result(self):
+        collector2 = BooksCollector()
+        collector2.add_new_book('Терминатор')
+        assert collector2.books_genre['Терминатор'] == ''
+    
     # проверка добавления книги с негативным сценарием
     @pytest.mark.parametrize('book_name',['', 'Война мир Война мир Война мир Война мир В'])
     def test_add_new_book_add_empty_book_name_and_41symbols_book_name(self, book_name):
