@@ -59,7 +59,9 @@ class TestBooksCollector:
     #проверка получения словаря books_genre
     def test_get_books_genre_positive_result(self):
         collector6 = BooksCollector()
-        assert collector6.books_genre == ['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии']
+        collector6.add_new_book('Терминатор')
+        collector6.set_book_genre('Терминатор', 'Фантастика')
+        assert collector6.books_genre['Терминатор'] == 'Фантастика'
 
     # проверка возвращения книги, подходящей детям
     def test_get_books_for_children_positive_result(self):
