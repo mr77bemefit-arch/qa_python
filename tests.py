@@ -29,14 +29,14 @@ class TestBooksCollector:
     def test_add_new_book_add_empty_book_name_and_41symbols_book_name(self):
         collector1 = BooksCollector()
         collector1.add_new_book(book_name)
-        assert len(collector1.self.books_genre()) == 0
+        assert len(collector1.books_genre()) == 0
 
     #проверка добавления жанра книги
     def test_set_book_genre_add_book_genre_positive_result(self):
         collector3 = BooksCollector()
         collector3.add_new_book('Терминатор')
         collector3.set_book_genre('Терминатор', 'Фантастика')
-        assert collector3.self.books_genre['Терминатор'] == 'Фантастика'
+        assert collector3.books_genre['Терминатор'] == 'Фантастика'
 
     #проверка получения жанра книги по её имени
     def test_get_book_genre_by_name_book_positive_result(self):
@@ -78,7 +78,7 @@ class TestBooksCollector:
         collector8.add_new_book('Терминатор')
         collector8.set_book_genre('Терминатор', 'Фантастика')
         collector8.add_book_in_favorites('Терминатор')
-        assert collector8.self.favorites == ['Терминатор']
+        assert collector8.favorites == ['Терминатор']
 
     #проверка удаления книги из Избранного
     def test_delete_book_from_favorites_del_exist_book_positive_result(self):
@@ -87,7 +87,7 @@ class TestBooksCollector:
         collector9.set_book_genre('Терминатор', 'Фантастика')
         collector9.add_book_in_favorites('Терминатор')
         collector9.delete_book_from_favorites('Терминатор')
-        assert len(collector9.self.favorites) == 0
+        assert len(collector9.favorites) == 0
 
     # проверка получения списка Избранных книг
     def test_get_list_of_favorites_books_positive_result(self):
