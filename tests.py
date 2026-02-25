@@ -84,7 +84,6 @@ class TestBooksCollector:
     def test_add_book_in_favorites_add_correct_genre_positive_result(self):
         collector8 = BooksCollector()
         collector8.add_new_book('Терминатор')
-        collector8.set_book_genre('Терминатор', 'Фантастика')
         collector8.add_book_in_favorites('Терминатор')
         assert collector8.favorites == ['Терминатор']
 
@@ -92,7 +91,6 @@ class TestBooksCollector:
     def test_delete_book_from_favorites_del_exist_book_positive_result(self):
         collector9 = BooksCollector()
         collector9.add_new_book('Терминатор')
-        collector9.set_book_genre('Терминатор', 'Фантастика')
         collector9.add_book_in_favorites('Терминатор')
         collector9.delete_book_from_favorites('Терминатор')
         assert len(collector9.favorites) == 0
@@ -101,7 +99,6 @@ class TestBooksCollector:
     def test_get_list_of_favorites_books_positive_result(self):
         collector10 = BooksCollector()
         collector10.add_new_book('Терминатор')
-        collector10.set_book_genre('Терминатор', 'Фантастика')
         collector10.add_book_in_favorites('Терминатор')
         assert collector10.get_list_of_favorites_books() == ['Терминатор']
 
