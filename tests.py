@@ -26,7 +26,7 @@ class TestBooksCollector:
 
     # проверка добавления книги с негативным сценарием
     @pytest.mark.parametrize('book_name',['', 'Война мир Война мир Война мир Война мир В'])
-    def test_add_new_book_add_empty_book_name_and_41symbols_book_name(self):
+    def test_add_new_book_add_empty_book_name_and_41symbols_book_name(self, book_name):
         collector1 = BooksCollector()
         collector1.add_new_book(book_name)
         assert len(collector1.books_genre()) == 0
