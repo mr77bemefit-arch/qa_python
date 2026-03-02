@@ -68,7 +68,7 @@ class TestBooksCollector:
         collector6 = BooksCollector()
         collector6.add_new_book('Терминатор')
         collector6.set_book_genre('Терминатор', 'Фантастика')
-        assert collector6.books_genre['Терминатор'] == 'Фантастика'
+        assert collector6.get_book_genre('Терминатор') == 'Фантастика'
 
     # проверка возвращения книги, подходящей детям
     def test_get_books_for_children_positive_result(self):
